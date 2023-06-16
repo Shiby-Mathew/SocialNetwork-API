@@ -1,7 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-//For email validation
-const match = [/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/];
 
 //TODO check validation
 // Schema to create User model
@@ -17,7 +15,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: match,
+      match: [/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/],
     },
 
     thoughts: [
