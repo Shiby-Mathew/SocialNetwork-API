@@ -1,0 +1,26 @@
+{
+  "name": "SocialNetwork-API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "seed": "node utils/seed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shiby-Mathew/SocialNetwork-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shiby-Mathew/SocialNetwork-API/issues"
+  },
+  "homepage": "https://github.com/Shiby-Mathew/SocialNetwork-API#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.0"
+  }
+}
