@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-
 //TODO check validation
 // Schema to create User model
 const userSchema = new Schema(
@@ -21,14 +20,14 @@ const userSchema = new Schema(
     thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: "thought",
+        ref: "Thought",
       },
     ],
 
     friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: "user",
+        ref: "User",
       },
     ],
   },
@@ -39,9 +38,9 @@ const userSchema = new Schema(
     id: false,
   }
 );
-userSchema.virtual('friendCount').get(function () {
-    return this.friends.length;
-  });
+userSchema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
 
 // Initialize our User model
 const User = model("user", userSchema);
