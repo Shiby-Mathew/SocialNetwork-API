@@ -14,6 +14,8 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: (createdAtDate) =>
+        moment(createdAtDate).format("MMM DD, YYYY [at] hh:mm a"),
       //getter method to format date**********todo
     },
     username: {
@@ -25,7 +27,7 @@ const thoughtSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
-      //getters: true,
+      getters: true,
     },
     id: false,
   }
