@@ -1,4 +1,4 @@
-const { Schema, model,Thought } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 //TODO check validation
 // Schema to create User model
@@ -24,14 +24,14 @@ const userSchema = new Schema(
     thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Thought",
+        ref: "thought",
       },
     ],
 
     friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: "User",
+        ref: "user",
       },
     ],
   },
