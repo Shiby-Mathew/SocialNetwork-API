@@ -1,6 +1,6 @@
 const { User, Thought } = require("../models");
 
-module.experts = {
+module.exports = {
   getUsers(req, res) {
     User.find()
       .populate("thoughts")
@@ -34,3 +34,8 @@ module.experts = {
       .catch((err) => res.status(500).json(err));
   },
 };
+
+
+//Remove a user's associated thoughts when deleted.
+///api/users/:userId/friends/:friendId
+//POST/DELETE
