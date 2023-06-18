@@ -4,29 +4,33 @@ const names = [
   "Aarez",
   "Aarman",
   "Aaron",
-  "Aaron-James",
-  "Aarron",
-  "Aaryan",
-  "Aaryn",
-  "Aayan",
-  "Aazaan",
-  "Abaan",
+  "Zhi",
+  "Zhong",
+  "Zhuo",
+  "Zi",
+  "Zidane",
+  "Zijie",
+  "Zinedine",
+  "Zion",
+  "Zishan",
+  "Ziya",
+  "Ziyaan",
+  "Zohaib",
+  "Zohair",
+  "Zoubaeir",
+  "Zubair",
+  "Zubayr",
+  "Zuriel",
 ];
 const thoughtDescriptions = [
-  "Toady rainny day",
+  "Today rainny day",
   "Today is Monday",
   "Cooking Experiments",
   "New work Place",
   "Deliveries today",
 ];
 
-const reactionDescriptions = [
-  "Toady rainny day",
-  "Today is Monday",
-  "Cooking Experiments",
-  "New work Place",
-  "Deliveries today",
-];
+const reactionDescriptions = ["Great", "Thumb Up", "Worry", "Sad"];
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -59,4 +63,4 @@ const getRandomThoughts = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomReactions, getRandomThoughts };
+module.exports = { getRandomName, getRandomThoughts };

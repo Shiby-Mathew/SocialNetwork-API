@@ -1,13 +1,13 @@
-const { Schema, model, Types } = require("mongoose");
+const { Schema, model,Thought } = require("mongoose");
 
 //TODO check validation
 // Schema to create User model
 const userSchema = new Schema(
   {
-    userId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
+    // userId: {
+    //   type: Schema.Types.ObjectId,
+    //   default: () => new Types.ObjectId(),
+    // },
     username: {
       type: String,
       required: true,
