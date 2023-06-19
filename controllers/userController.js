@@ -23,7 +23,7 @@ module.exports = {
       .select("-__v")
       .then((userData) =>
         !userData
-          ? res.status(404).json({ message: "No user in this ID" })
+          ? res.status(404).json({ message: "No user in this id" })
           : res.status(200).json({ userData })
       )
       .catch((err) => {
@@ -44,7 +44,7 @@ module.exports = {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((userData) =>
         !userData
-          ? res.status(404).json({ message: "No user with this ID" })
+          ? res.status(404).json({ message: "No user with this id" })
           : Thought.deleteMany({ _id: { $in: userData.thoughts } })
       )
       .then(() =>
@@ -63,7 +63,7 @@ module.exports = {
     )
       .then((userData) =>
         !userData
-          ? res.status(404).json({ message: "No user with this ID" })
+          ? res.status(404).json({ message: "No user with this id" })
           : res.json(userData)
       )
       .catch((err) => res.status(500).json(err));
