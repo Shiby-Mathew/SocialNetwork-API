@@ -30,7 +30,7 @@ const thoughtDescriptions = [
   "Deliveries today",
 ];
 
-const reactionDescriptions = ["Great", "Thumb Up", "Worry", "Sad"];
+const reactionDescriptions = ["Great", "Thumb Up", "Like", "Dislike","Awesome"];
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];

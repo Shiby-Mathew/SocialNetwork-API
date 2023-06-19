@@ -27,7 +27,7 @@ module.exports = {
   // create a new thought
   //to create a new thought (don't forget to push the created thought's _id to the associated user's thoughts array field)*******
 
-   // Creates a new thought. Accepts a request body with the entire thought object.
+  // Creates a new thought. Accepts a request body with the entire thought object.
   // Because thought are associated with Users, we then update the User who created the thought and add the ID of the thought to the thought array
   createThought(req, res) {
     Thought.create(req.body)
@@ -51,7 +51,7 @@ module.exports = {
 
   // Delete thought
 
-    // Deletes thought from the database. Looks for thought by ID.
+  // Deletes thought from the database. Looks for thought by ID.
   // Then if the thought exists, we look for any users associated with the thought based on thoughtID and update tthe hought array for the User.
   deleteThought(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId })
@@ -93,7 +93,35 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-};
 
-// /api/thoughts/:thoughtId/reactions
-// POST/DELETE
+  // /api/thoughts/:thoughtId/reactions
+  // POST/DELETE
+
+  addThoughtReaction(req, res) {
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $addToSet: { reactions: req.body } },
+      { runValidators: true, new: true }
+    )
+      .then((thoughtData) =>
+        !thoughtData
+          ? res.status(404).json({ message: "No thought with this id" })
+          : res.json(thoughtData)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
+
+  removeThoughtReaction(req, res) {
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $pull: { reactions: { reactionId: req.params.reactionId } } },
+      { runValidators: true, new: true }
+    )
+      .then((thoughtData) =>
+        !thoughtData
+          ? res.status(404).json({ message: "No thought with this id" })
+          : res.json(thoughtData)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
+};
