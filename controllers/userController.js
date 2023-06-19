@@ -23,7 +23,7 @@ module.exports = {
       .select("-__v")
       .then((userData) =>
         !userData
-          ? res.status(404).json({ message: "No user with that ID" })
+          ? res.status(404).json({ message: "No user in this ID" })
           : res.status(200).json({ userData })
       )
       .catch((err) => {
@@ -44,10 +44,12 @@ module.exports = {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((userData) =>
         !userData
-          ? res.status(404).json({ message: "No User find with this ID!" })
+          ? res.status(404).json({ message: "No user with this ID" })
           : Thought.deleteMany({ _id: { $in: userData.thoughts } })
       )
-      .then(() => res.json({ message: "User and Thought deleted!" }))
+      .then(() =>
+        res.json({ message: "User and Thought successfully deleted" })
+      )
       .catch((err) => res.status(500).json(err));
   },
 
@@ -61,42 +63,46 @@ module.exports = {
     )
       .then((userData) =>
         !userData
-          ? res.status(404).json({ message: "No User find with this ID!" })
+          ? res.status(404).json({ message: "No user with this ID" })
           : res.json(userData)
       )
       .catch((err) => res.status(500).json(err));
   },
+
+  //Remove a user's associated thoughts when deleted.
+  ///api/users/:userId/friends/:friendId
+  //POST/DELETE
+
+  //***************Friend */
+
+  //Add a friend
+  //  /api/users/:userid/friends/:friendId
+
+  addAfriend(req, res) {
+    User.findOneAndUpdate(
+      { _id: req.params.userId },
+      { $addToSet: { friends: req.params.friendId } },
+      { runValidators: true, new: true }
+    )
+      .then((userData) =>
+        !userData
+          ? res.status(404).json({ message: "No user with this id" })
+          : res.json(userData)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
+  // // Remove video response
+  // removeVideoResponse(req, res) {
+  //   Video.findOneAndUpdate(
+  //     { _id: req.params.videoId },
+  //     { $pull: { reactions: { responseId: req.params.responseId } } },
+  //     { runValidators: true, new: true }
+  //   )
+  //     .then((video) =>
+  //       !video
+  //         ? res.status(404).json({ message: 'No video with this id!' })
+  //         : res.json(video)
+  //     )
+  //     .catch((err) => res.status(500).json(err));
+  // },
 };
-
-//Remove a user's associated thoughts when deleted.
-///api/users/:userId/friends/:friendId
-//POST/DELETE
-
-//***************Reactions */
-// addVideoResponse(req, res) {
-//   Video.findOneAndUpdate(
-//     { _id: req.params.videoId },
-//     { $addToSet: { responses: req.body } },
-//     { runValidators: true, new: true }
-//   )
-//     .then((video) =>
-//       !video
-//         ? res.status(404).json({ message: 'No video with this id!' })
-//         : res.json(video)
-//     )
-//     .catch((err) => res.status(500).json(err));
-// },
-// // Remove video response
-// removeVideoResponse(req, res) {
-//   Video.findOneAndUpdate(
-//     { _id: req.params.videoId },
-//     { $pull: { reactions: { responseId: req.params.responseId } } },
-//     { runValidators: true, new: true }
-//   )
-//     .then((video) =>
-//       !video
-//         ? res.status(404).json({ message: 'No video with this id!' })
-//         : res.json(video)
-//     )
-//     .catch((err) => res.status(500).json(err));
-// },
