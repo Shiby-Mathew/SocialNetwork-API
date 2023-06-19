@@ -91,18 +91,18 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // // Remove video response
-  // removeVideoResponse(req, res) {
-  //   Video.findOneAndUpdate(
-  //     { _id: req.params.videoId },
-  //     { $pull: { reactions: { responseId: req.params.responseId } } },
-  //     { runValidators: true, new: true }
-  //   )
-  //     .then((video) =>
-  //       !video
-  //         ? res.status(404).json({ message: 'No video with this id!' })
-  //         : res.json(video)
-  //     )
-  //     .catch((err) => res.status(500).json(err));
-  // },
+  //Remove a friend
+  removeAfriend(req, res) {
+    User.findOneAndUpdate(
+      { _id: req.params.userId },
+      { $pull: { friends: req.params.friendId  } },
+      { runValidators: true, new: true }
+    )
+      .then((userData) =>
+        !userData
+          ? res.status(404).json({ message: 'No user with this id' })
+          : res.json(userData)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
 };
