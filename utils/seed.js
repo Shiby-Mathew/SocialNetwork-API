@@ -10,15 +10,7 @@ connection.once("open", async () => {
   await User.deleteMany({});
   const users = [];
 
-  // const users = [
-  //   {
-  //     username: "abc",
-  //     email: "abc@gmail.com",
-  //     thoughts: [],
-  //     friends: [],
-  //   },
-  // ];
-  const thoughts = getRandomThoughts(2);
+  const thoughts = getRandomThoughts(3);
 
   const emails = [
     "abcd@gmail.com",
@@ -30,13 +22,14 @@ connection.once("open", async () => {
   for (let i = 0; i < emails.length; i++) {
     const username = getRandomName();
     const email = emails[i];
-    const friends = [];
     const thoughts = [];
+    const friends = [];
+
     users.push({
       username,
       email,
-      friends,
       thoughts,
+      friends,
     });
   }
 

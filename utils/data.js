@@ -30,12 +30,18 @@ const thoughtDescriptions = [
   "Deliveries today",
 ];
 
-const reactionDescriptions = ["Great", "Thumb Up", "Like", "Dislike","Awesome"];
+const reactionDescriptions = [
+  "Great",
+  "Very Nice thought",
+  "Like",
+  "Cool thought",
+  "Awesome",
+];
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Gets a random full name
+// Gets a random  name
 const getRandomName = () =>
   `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
 
@@ -56,7 +62,7 @@ const getRandomThoughts = (int) => {
     results.push({
       thoughtText: getRandomArrItem(thoughtDescriptions),
       username: getRandomName(),
-      reactions: [...getRandomReactions(3)],
+      reactions: [...getRandomReactions(1)],
     });
   }
   return results;

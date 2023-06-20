@@ -20,8 +20,8 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: createdAtDate => moment(createdAtDate).format("MMM DD, YYYY [at] hh:mm a"),
-      //getter method to format date**********todo
+      get: (createdAtDate) =>
+        moment(createdAtDate).format("MMM DD, YYYY [at] hh:mm a"),
     },
   },
   {

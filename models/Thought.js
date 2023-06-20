@@ -18,7 +18,7 @@ const thoughtSchema = new Schema(
       default: Date.now,
       get: (createdAtDate) =>
         moment(createdAtDate).format("MMM DD, YYYY [at] hh:mm a"),
-      //getter method to format date**********todo
+     
     },
     username: {
       type: String,
