@@ -3,7 +3,11 @@
 ## Description
 
 ```
-This is a backend appliction to built an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. Technolgies used are Express.js for rotuing, MongoDB database and the Mongoose ODM. MongoDB is a popular choice for many social networks due to its speed with large amounts of data and flexibility with unstructured data. For date format used moment.js package. This is only a backend application tested in Insomnia.
+This is a backend appliction to built an API for a social network web application where users can share their
+thoughts, react to friends’ thoughts, and create a friend list. Technolgies used are Express.js for rotuing,
+MongoDB database and the Mongoose ODM. MongoDB is a popular choice for many social networks due to its speed
+with large amounts of data and flexibility with unstructured data. For date format used moment.js package.
+This is only a backend application tested in Insomnia.
 
 ```
 
@@ -26,7 +30,8 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia
 THEN I am able to successfully create, update, and delete users and thoughts in my database
 WHEN I test API POST and DELETE routes in Insomnia
-THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+THEN I am able to successfully create and delete reactions to thoughts and add
+and remove friends to a user’s friend list
 ```
 
 ## Mock-Up
@@ -47,8 +52,8 @@ Moment.js
 
 ## Usage
 
-- When we ran the command to invoke the application, the Mongoose models are synced to the MongoDB database.
-- After that open Isomnia and test API GET routes for users and thoughts, the data for each of the routes displayed in JSON format.
+- Invoke the application by run, npm index.js, the Mongoose models are synced to the MongoDB database.
+- Test the endpoints in Isomnia, API GET routes for users and thoughts, the data for each of the routes displayed in JSON format.
 - User and thoughts have API POST,PUT and DELETE, each user and thought have a unique ID.
 - Friends and reactions routes for POST and DELETE, to add and delete a friend and reaction for corresponding user and thought
 
@@ -69,3 +74,31 @@ User Routes
 - Create a user: POST/api/users
 - Update a user: PUT/api/users/:userId
 - Delete a user: DELETE/api/users/:userId
+
+```
+Thought Routes
+```
+
+- Find all thoughts: GET/api/thoughts
+- Find single thought: GET/api/thoughts/:thoughtId
+- Create a thought: POST/api/thoughts
+- Update a thought: PUT/api/thoughts/:thoughtId
+- Delete a thought: DELETE/api/thoughts/:thoughtId
+
+```
+Friend Routes
+```
+
+- Add a friend to user's friend list: POST/api/users/:userId/friends/:friendId
+- Delete a friend from users's friend list: DELETE/api/users/:userId/friends/:friendId
+
+```
+Reaction Routes
+```
+
+- Add a reaction to thought's list: POST/api/thoughts/:thoughtId/reactions
+- Delete a reaction from a thought: DELETE/api/thoughts/:thoughtId/reactions/:reactionId
+
+## Resources
+
+- Course Material
