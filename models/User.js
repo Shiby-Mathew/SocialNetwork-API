@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-//TODO check validation
 // Schema to create User model
 const userSchema = new Schema(
   {
