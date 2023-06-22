@@ -90,8 +90,12 @@ Reaction Routes
 ## ScreenShots
 
 The following screenshots shows some of the application's routes for user,thoughts,reaction to thoughts and friends to user being tested in Insomnia:
-![All routes.](./utils/images/Allroutes.png)[Find all users](./utils/images/users.png)
+
+![All routes.](./utils/images/Allroutes.png)
+![Find all users](./utils/images/users.png)
 ![Create a user](./utils/images/post.png)
+![Add a reaction](./utils/images/reaction.png)
+![Add a friend](./utils/images/friend.png)
 
 ## Resources
 
