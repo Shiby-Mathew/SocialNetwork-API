@@ -3,11 +3,11 @@
 ## Description
 
 ```
-This is a backend appliction to built an API for a social network web application where users can share their
-thoughts, react to friends’ thoughts, and create a friend list. Technolgies used are Express.js for rotuing,
-MongoDB database and the Mongoose ODM. MongoDB is a popular choice for many social networks due to its speed
-with large amounts of data and flexibility with unstructured data. For date format used moment.js package.
-This is only a backend application tested in Insomnia.
+This is a backend appliction to built an API for a social network web application where users can share
+their thoughts, react to friends’ thoughts, and create a friend list. Technolgies used are Express.js
+for rotuing,MongoDB database and the Mongoose ODM. MongoDB is a popular choice for many social networks
+due to its speedwith large amounts of data and flexibility with unstructured data. For date format used
+moment.js package. All API routes of this backend application tested in Insomnia.
 
 ```
 
@@ -52,53 +52,41 @@ Moment.js
 
 ## Usage
 
-- Invoke the application by run, npm index.js, the Mongoose models are synced to the MongoDB database.
+- Invoke the application by run `npm index.js`, the Mongoose models are synced to the MongoDB database.
 - Test the endpoints in Isomnia, API GET routes for users and thoughts, the data for each of the routes displayed in JSON format.
-- User and thoughts have API POST,PUT and DELETE, each user and thought have a unique ID.
-- Friends and reactions routes for POST and DELETE, to add and delete a friend and reaction for corresponding user and thought
-
-## Resources
-
-- Course Material
+- User and thoughts have API POST,PUT and DELETE, this has been done using user and thought unique ID's.
+- Friends and reactions have routes for POST and DELETE, to add and delete a friend and reaction for corresponding user and thought
 
 ## Test
 
 Insomnia is used to test REST API calls.
 
-```
 User Routes
-```
 
-- Find all users: GET/api/users
-- Find single user: GET/api/users/:userId
-- Create a user: POST/api/users
-- Update a user: PUT/api/users/:userId
-- Delete a user: DELETE/api/users/:userId
+- Find all users: `GET/api/users`
+- Find single user: `GET/api/users/:userId`
+- Create a user: `POST/api/users`
+- Update a user: `PUT/api/users/:userId`
+- Delete a user:`DELETE/api/users/:userId`
 
-```
 Thought Routes
-```
 
-- Find all thoughts: GET/api/thoughts
-- Find single thought: GET/api/thoughts/:thoughtId
-- Create a thought: POST/api/thoughts
-- Update a thought: PUT/api/thoughts/:thoughtId
-- Delete a thought: DELETE/api/thoughts/:thoughtId
+- Find all thoughts: `GET/api/thoughts`
+- Find single thought: `GET/api/thoughts/:thoughtId`
+- Create a thought: `POST/api/thoughts`
+- Update a thought: `PUT/api/thoughts/:thoughtId`
+- Delete a thought: `DELETE/api/thoughts/:thoughtId`
 
-```
 Friend Routes
-```
 
-- Add a friend to user's friend list: POST/api/users/:userId/friends/:friendId
-- Delete a friend from users's friend list: DELETE/api/users/:userId/friends/:friendId
+- Add a friend to user's friend list: `POST/api/users/:userId/friends/:friendId`
+- Delete a friend from users's friend list: `DELETE/api/users/:userId/friends/:friendId`
 
-```
 Reaction Routes
-```
 
-- Add a reaction to thought's list: POST/api/thoughts/:thoughtId/reactions
-- Delete a reaction from a thought: DELETE/api/thoughts/:thoughtId/reactions/:reactionId
+- Add a reaction to thought's list: `POST/api/thoughts/:thoughtId/reactions`
+- Delete a reaction from a thought: `DELETE/api/thoughts/:thoughtId/reactions/:reactionId`
 
 ## Resources
 
-- Course Material
+- Course Materials
