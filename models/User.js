@@ -41,6 +41,8 @@ const userSchema = new Schema(
     id: false,
   }
 );
+
+// Create a virtual property `friendCount` that gets the count of friends
 userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });

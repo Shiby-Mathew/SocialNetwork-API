@@ -23,7 +23,7 @@ const names = [
   "Zuriel",
 ];
 const thoughtDescriptions = [
-  "Today rainny day",
+  "Today rainy day",
   "Today is Monday",
   "Cooking Experiments",
   "New work Place",

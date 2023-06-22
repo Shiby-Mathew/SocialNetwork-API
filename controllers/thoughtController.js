@@ -7,9 +7,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-  //Get a single thought by :id
-
-  // Gets a single application using the findOneAndUpdate method. We pass in the ID of the application and then respond with it, or an error if not found
+  // Gets a single application using the findOneAndUpdate method.
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .select("-__v")
@@ -25,10 +23,7 @@ module.exports = {
   },
 
   // create a new thought
-  //to create a new thought (don't forget to push the created thought's _id to the associated user's thoughts array field)*******
 
-  // Creates a new thought. Accepts a request body with the entire thought object.
-  // Because thought are associated with Users, we then update the User who created the thought and add the ID of the thought to the thought array
   createThought(req, res) {
     Thought.create(req.body)
       .then((thoughtData) => {
@@ -49,10 +44,8 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Delete thought
+  // Delete a thought
 
-  // Deletes thought from the database. Looks for thought by ID.
-  // Then if the thought exists, we look for any users associated with the thought based on thoughtID and update tthe hought array for the User.
   deleteThought(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId })
       .then((thoughtData) =>
@@ -74,9 +67,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-  //Update Thought
-
-  // Updates and thought using the findOneAndUpdate method. Uses the ID, and the $set operator in mongodb to inject the request body. Enforces validation.
+  // Updates and thought using the findOneAndUpdate method.
   updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -94,9 +85,9 @@ module.exports = {
       });
   },
 
-  // /api/thoughts/:thoughtId/reactions
-  // POST/DELETE
+  //***************Reaction */
 
+  //Add a reaction for thought
   addThoughtReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -111,6 +102,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
+  //Remove a reaction for thought
   removeThoughtReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },

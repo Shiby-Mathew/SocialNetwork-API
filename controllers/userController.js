@@ -14,7 +14,6 @@ module.exports = {
       });
   },
 
-  //Get a single user by :id*************
   // a single user by its _id and populated thought and friend data
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
@@ -32,14 +31,14 @@ module.exports = {
       });
   },
 
-  //Create a user **************how to add friends
+  //Create a user
   createUser(req, res) {
     User.create(req.body)
       .then((userData) => res.json(userData))
       .catch((err) => res.status(500).json(err));
   },
-  //Delete User
 
+  //Delete a User
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((userData) =>
@@ -54,7 +53,6 @@ module.exports = {
   },
 
   //Update User
-
   updateUser(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -69,14 +67,9 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-  //Remove a user's associated thoughts when deleted.
-  ///api/users/:userId/friends/:friendId
-  //POST/DELETE
-
   //***************Friend */
 
   //Add a friend
-  //  /api/users/:userid/friends/:friendId
 
   addAfriend(req, res) {
     User.findOneAndUpdate(
@@ -95,12 +88,12 @@ module.exports = {
   removeAfriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $pull: { friends: req.params.friendId  } },
+      { $pull: { friends: req.params.friendId } },
       { runValidators: true, new: true }
     )
       .then((userData) =>
         !userData
-          ? res.status(404).json({ message: 'No user with this id' })
+          ? res.status(404).json({ message: "No user with this id" })
           : res.json(userData)
       )
       .catch((err) => res.status(500).json(err));
