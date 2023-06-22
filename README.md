@@ -87,6 +87,12 @@ Reaction Routes
 - Add a reaction to thought's list: `POST/api/thoughts/:thoughtId/reactions`
 - Delete a reaction from a thought: `DELETE/api/thoughts/:thoughtId/reactions/:reactionId`
 
+## ScreenShots
+
+The following screenshots shows some of the application's routes for user,thoughts,reaction to thoughts and friends to user being tested in Insomnia:
+![All routes.](./utils/images/Allroutes.png)[Find all users](./utils/images/users.png)
+![Create a user](./utils/images/post.png)
+
 ## Resources
 
 - Course Materials
