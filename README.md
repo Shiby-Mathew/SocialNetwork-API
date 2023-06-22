@@ -3,11 +3,11 @@
 ## Description
 
 ```
-This is a backend appliction to built an API for a social network web application where users can share
-their thoughts, react to friends’ thoughts, and create a friend list. Technolgies used are Express.js
-for rotuing,MongoDB database and the Mongoose ODM. MongoDB is a popular choice for many social networks
-due to its speedwith large amounts of data and flexibility with unstructured data. For date format used
-moment.js package. All API routes of this backend application tested in Insomnia.
+This is a backend application to create an API for a social network web application where users can share
+their thoughts, react to friend's thoughts and create a friends list. Technologies used are Express.js
+for routing, MongoDB database and Mongoose ODM. MongoDB is a popular choice for many social networks
+due to its speed with large amounts of data and flexibility with unstructured data. For date format used
+moment.js package. All API routes of this backend application is tested in Insomnia.
 
 ```
 
@@ -36,7 +36,7 @@ and remove friends to a user’s friend list
 
 ## Mock-Up
 
-The following video shows application's routes for user,thoughts,reaction to thoughts and friends to user being tested in Insomnia:
+The following video shows application's routes for user, thoughts, reaction to thoughts and friends to user being tested in Insomnia:
 
 [![Walk through video](https://drive.google.com/file/d/171gvy8oGhigC1JhD35Yc7YBkPgoPna6c/view.png)](https://drive.google.com/file/d/171gvy8oGhigC1JhD35Yc7YBkPgoPna6c/view)
 
@@ -54,10 +54,10 @@ Moment.js
 
 - Invoke the application by run `npm index.js`, the Mongoose models are synced to the MongoDB database.
 - Test the endpoints in Isomnia, API GET routes for users and thoughts, the data for each of the routes displayed in JSON format.
-- User and thoughts have API POST,PUT and DELETE, this has been done using user and thought unique ID's.
-- Friends and reactions have routes for POST and DELETE, to add and delete a friend and reaction for corresponding user and thought
+- User and thoughts have APIs - POST, PUT and DELETE. This has been done using user and thought with unique ID's.
+- Friends and reactions have routes for POST and DELETE - to add and delete a friend and reaction for corresponding user and thought
 
-## Test
+## Tests
 
 Insomnia is used to test REST API calls.
 
